@@ -12,7 +12,7 @@ const config = require('./config/database');
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', () =>{
-	console.log('Connected to databse' + config.database);
+	console.log('Connected to databse ' + config.database);
 });
 
 mongoose.connection.on('error', (err) =>{
@@ -21,12 +21,14 @@ mongoose.connection.on('error', (err) =>{
 //express server
 const app = express();
 
+//Users Route
+const users = require('./routes/users');
+
+
 //port number
 const port = 3000;
 
 
-//Users Route
-const users = require('./routes/users');
 
 
 

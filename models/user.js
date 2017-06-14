@@ -50,7 +50,7 @@ module.exports.addUser = function(newUser, callback){
 			newUser.password = hash;
 			newUser.save(callback);
 		});
-	})
+	});
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
