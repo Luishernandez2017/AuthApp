@@ -21,7 +21,7 @@ export class AuthService {
 //		
 		headers.append('Content-Type', 'application/json');
 //
-return this.http.post('http://localhost:3000/users/register', user, {headers: headers}).map(res => res.json());
+return this.http.post('users/register', user, {headers: headers}).map(res => res.json());
 	}
 	
 	
@@ -32,7 +32,7 @@ return this.http.post('http://localhost:3000/users/register', user, {headers: he
 //		
 		headers.append('Content-Type', 'application/json');
 //
-return this.http.post('http://localhost:3000/users/login', user, {headers: headers}).map(res => res.json());
+return this.http.post('users/login', user, {headers: headers}).map(res => res.json());
 	}
 	
 	getProfile(){
