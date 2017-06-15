@@ -5,16 +5,19 @@ const cors		 = require("cors");//cors module
 const passport   = require("passport");//passport module
 const mongoose   = require("mongoose");//mongoose module
 
-
+//config module
 const config = require('./config/database');
 
 //connect to database
 mongoose.connect(config.database);
 
+
+//log Connection
 mongoose.connection.on('connected', () =>{
 	console.log('Connected to databse ' + config.database);
 });
 
+//log connection errors
 mongoose.connection.on('error', (err) =>{
 	console.log('Database error: ' + err);
 });
@@ -47,10 +50,19 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+//require passport
 require('./config/passport')(passport);
 
 //Users route
 app.use('/users', users);
+
+
+//redirect any other routes to index.html
+app.get('*', (req, res)=>{
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 
 //Index route
 app.get('/', (reg, res) =>{
