@@ -1,0 +1,26 @@
+{
+	"name": "authapp",
+	"version": "1.0.0",
+	"description": "article database MEAN app",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app"
+	},
+	"dependencies": {
+		"express": "*",
+		"mongoose": "*",
+		"bcryptjs": "*",
+		"cors": "*",
+		"body-parser": "*",
+		"jsonwebtoken": "*",
+		"passport": "*",
+		"passport-jwt": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Luishernandez2017/AuthApp.git"
+	},
+	"author": "Luis Hernandez",
+	"license": "MIT"
+}
