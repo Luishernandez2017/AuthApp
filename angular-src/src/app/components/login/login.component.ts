@@ -34,6 +34,12 @@ export class LoginComponent implements OnInit {
 			password: this.password
 		}
 		
+		//Required Fields
+		if(!this.validateService.validateLogin(user)){
+			this.flashMessagesService.show("Please fill in all fields!", {cssClass: 'alert-danger', timeout: 3000});
+			return false;
+		   
+		   }
 		this.authService.authenticateUser(user).subscribe(data =>{
 			if(data.success){
 				this.authService.storeUserData(data.token, data.user);
