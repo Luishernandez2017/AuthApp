@@ -15,7 +15,7 @@ export class AuthService {
   isDev:boolean;
 
   constructor(private http:Http) {
-    this.isDev = true; // Change to false before deployment
+    this.isDev = true; // Change false before deployment
   }
 	
  registerUser(user){
